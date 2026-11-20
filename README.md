@@ -1,2 +1,2 @@
-# cent-and-lenard-website
+# cent-website
 personal website for bsit student
