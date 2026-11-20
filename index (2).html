@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet Vincent Aliazas, a student of BSINFO-1B.">
+  <title>BSINFO-1B | Vincent Aliazas</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: rgba(19, 28, 51, .82);
+      --panel-2: #151f38;
+      --text: #f4f7ff;
+      --muted: #aab6d0;
+      --accent: #79e0d1;
+      --accent-2: #a99bff;
+      --line: rgba(255,255,255,.11);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); background:
+        radial-gradient(ellipse at 15% 10%, rgba(121,224,209,.14), transparent 35%),
+        radial-gradient(ellipse at 90% 25%, rgba(169,155,255,.16), transparent 32%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1100px, calc(100% - 40px)); margin: auto; }
+    header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+    nav { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { font-weight: 800; letter-spacing: .08em; font-size: .95rem; }
+    .brand span { color: var(--accent); }
+    .navlinks { display:flex; gap:24px; color:var(--muted); font-size:.92rem; }
+    .navlinks a:hover { color:var(--accent); }
+    .hero { padding: 90px 0 70px; text-align:center; }
+    .eyebrow {
+      display:inline-flex; align-items:center; gap:9px; padding:7px 13px;
+      border:1px solid var(--line); border-radius:99px; color:var(--accent);
+      background:rgba(255,255,255,.04); font-size:.8rem; font-weight:700;
+      letter-spacing:.12em; text-transform:uppercase;
+    }
+    h1 { font-size:clamp(2.6rem, 7vw, 5.3rem); line-height:1.04; letter-spacing:-.055em; margin:22px 0 16px; }
+    h1 .gradient { background:linear-gradient(100deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .intro { max-width:650px; margin:0 auto; color:var(--muted); font-size:1.08rem; }
+    .hero-actions { display:flex; justify-content:center; gap:12px; margin-top:30px; flex-wrap:wrap; }
+    .btn { padding:12px 19px; border-radius:12px; font-weight:700; border:1px solid var(--line); transition:.2s; }
+    .btn.primary { color:#08131d; background:var(--accent); border-color:var(--accent); }
+    .btn:hover { transform:translateY(-3px); }
+    .section { padding: 42px 0 76px; }
+    .section-head { margin-bottom:26px; }
+    .section-head small { color:var(--accent); text-transform:uppercase; letter-spacing:.16em; font-weight:800; }
+    h2 { font-size:clamp(1.8rem,4vw,2.6rem); letter-spacing:-.04em; margin:8px 0; }
+    .section-head p { color:var(--muted); margin:0; }
+    .cards { display:grid; grid-template-columns:minmax(0,680px); justify-content:center; gap:22px; }
+    .card {
+      position:relative; overflow:hidden; padding:28px; border:1px solid var(--line);
+      border-radius:22px; background:linear-gradient(145deg,var(--panel),rgba(21,31,56,.7));
+      box-shadow:0 20px 60px rgba(0,0,0,.18);
+    }
+    .card::before { content:""; position:absolute; width:190px; height:190px; border-radius:50%; right:-80px; top:-95px; background:rgba(121,224,209,.09); }
+    .card:nth-child(2)::before { background:rgba(169,155,255,.13); }
+    .avatar { width:62px; height:62px; display:grid; place-items:center; border-radius:18px; font-size:1.8rem; background:rgba(121,224,209,.13); border:1px solid rgba(121,224,209,.25); }
+    .card:nth-child(2) .avatar { background:rgba(169,155,255,.14); border-color:rgba(169,155,255,.28); }
+    .role { color:var(--accent); font-size:.78rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; margin:22px 0 4px; }
+    .card:nth-child(2) .role { color:var(--accent-2); }
+    h3 { font-size:1.65rem; letter-spacing:-.035em; margin:0 0 8px; }
+    .bio { color:var(--muted); margin:0 0 22px; }
+    .hobby-title { font-size:.8rem; color:var(--muted); font-weight:800; text-transform:uppercase; letter-spacing:.1em; margin-bottom:10px; }
+    .tags { display:flex; flex-wrap:wrap; gap:9px; }
+    .tag { border:1px solid var(--line); background:rgba(255,255,255,.045); padding:8px 11px; border-radius:10px; font-size:.88rem; }
+    .tag span { margin-right:6px; }
+    .shared { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
+    .shared div { border:1px solid var(--line); border-radius:16px; padding:18px; background:rgba(255,255,255,.035); }
+    .shared strong { display:block; color:var(--accent); margin-bottom:3px; }
+    .shared p { margin:0; color:var(--muted); font-size:.9rem; }
+    footer { border-top:1px solid var(--line); padding:26px 0; color:var(--muted); text-align:center; font-size:.9rem; }
+    footer strong { color:var(--text); }
+    @media (max-width:700px) {
+      .navlinks { gap:13px; font-size:.82rem; }
+      .cards { grid-template-columns:1fr; }
+      .hero { padding:68px 0 50px; }
+      .shared { grid-template-columns:1fr; }
+    }
+    @media (max-width:420px) {
+      .wrap { width:min(100% - 28px,1100px); }
+      .brand { font-size:.8rem; }
+      .navlinks { gap:10px; }
+      .navlinks a { font-size:.76rem; }
+      .card { padding:22px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">BSINFO<span>-1B</span></a>
+      <div class="navlinks">
+        <a href="#home">Home</a>
+        <a href="#students">Students</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div class="eyebrow">✦ Student profiles · BSINFO-1B</div>
+      <h1>One student.<br><span class="gradient">Different passions.</span></h1>
+      <p class="intro">Welcome to my personal website! Get to know me, discover my hobbies, and see what I enjoy doing outside the classroom.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#students">Meet me ↓</a>
+        <a class="btn" href="#about">About our section</a>
+      </div>
+    </section>
+
+    <section class="section wrap" id="students">
+      <div class="section-head">
+        <small>Get to know us</small>
+        <h2>Meet me</h2>
+        <p>A student from the BSINFO-1B section.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="avatar" aria-hidden="true">🎸</div>
+          <div class="role">Student 01</div>
+          <h3>Vincent Aliazas</h3>
+          <p class="bio">A music and gaming enthusiast who enjoys playing guitar, listening to music, and playing online games.</p>
+          <div class="hobby-title">My hobbies</div>
+          <div class="tags">
+            <span class="tag"><span>🎸</span>Playing guitar</span>
+            <span class="tag"><span>🎧</span>Listening to music</span>
+            <span class="tag"><span>🎮</span>Playing online games</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section wrap" id="about">
+      <div class="section-head">
+        <small>About me</small>
+        <h2>About my program</h2>
+        <p>A little information about my academic program and section.</p>
+      </div>
+      <div class="shared">
+        <div><strong>Program</strong><p>Bachelor of Science in Information Technology</p></div>
+        <div><strong>Section</strong><p>BSINFO-1B</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Made with <span aria-label="love">♥</span> by <strong>Vincent Aliazas</strong> · BSINFO-1B</div>
+  </footer>
+</body>
+</html>
